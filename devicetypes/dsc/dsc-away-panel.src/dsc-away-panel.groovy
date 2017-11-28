@@ -12,17 +12,7 @@ metadata {
     definition (name: "DSC Away Panel", author: "Jordan <jordan@xeron.cc>", namespace: 'dsc') {
         capability "Switch"
         capability "Refresh"
-        attribute "status", "string"
-        attribute "trouble", "string"
-        attribute "chime", "string"
-        attribute "ledready", "string"
-        attribute "ledarmed", "string"
-        attribute "ledmemory", "string"
-        attribute "ledbypass", "string"
-        attribute "ledtrouble", "string"
-        attribute "ledprogram", "string"
-        attribute "ledfire", "string"
-        attribute "ledbacklight", "string"
+
         command "away"
         command "autobypass"
         command "bypassoff"
@@ -188,7 +178,7 @@ def partition(String state, String partition, Map parameters) {
 }
 
 def away() {
-  parent.sendUrl("arm?part=${device.deviceNetworkId[-1]}")
+  parent.sendUrl('arm')
 }
 
 def autobypass() {
@@ -196,19 +186,19 @@ def autobypass() {
 }
 
 def bypassoff() {
-  parent.sendUrl("bypass?zone=0&part=${device.deviceNetworkId[-1]}")
+  parent.sendUrl("bypass?zone=0")
 }
 
 def disarm() {
-  parent.sendUrl("disarm?part=${device.deviceNetworkId[-1]}")
+  parent.sendUrl('disarm')
 }
 
 def instant() {
-  parent.sendUrl("toggleinstant?part=${device.deviceNetworkId[-1]}")
+  parent.sendUrl('toggleinstant')
 }
 
 def night() {
-  parent.sendUrl("togglenight?part=${device.deviceNetworkId[-1]}")
+  parent.sendUrl('togglenight')
 }
 
 def nokey() {
@@ -250,13 +240,13 @@ def refresh() {
 }
 
 def reset() {
-  parent.sendUrl("reset?part=${device.deviceNetworkId[-1]}")
+  parent.sendUrl('reset')
 }
 
 def stay() {
-  parent.sendUrl("stayarm?part=${device.deviceNetworkId[-1]}")
+  parent.sendUrl('stayarm')
 }
 
 def togglechime() {
-  parent.sendUrl("togglechime?part=${device.deviceNetworkId[-1]}")
+  parent.sendUrl('togglechime')
 }

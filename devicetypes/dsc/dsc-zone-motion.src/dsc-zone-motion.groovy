@@ -14,8 +14,6 @@ metadata {
     capability "Motion Sensor"
     capability "Sensor"
     capability "Momentary"
-    attribute "bypass", "string"
-    attribute "trouble", "string"
 
     // Add commands as needed
     command "zone"

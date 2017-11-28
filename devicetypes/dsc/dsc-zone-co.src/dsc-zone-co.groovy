@@ -14,8 +14,6 @@ metadata {
     capability "Carbon Monoxide Detector"
     capability "Sensor"
     capability "Momentary"
-    attribute "bypass", "string"
-    attribute "trouble", "string"
 
     // Add commands as needed
     command "zone"
